@@ -34,3 +34,7 @@ Route::match(['get','post'],'/match',function(){
 Route::get('/produto/{id}/{categoria}',function($id,$categoria){
     return 'O id do produto eh '.$id.' Categoria: '.$categoria; 
 });
+
+// Direcioanmentos
+// Route::redirect('/sobre', '/empresa');
+Route::view('/empresa','site/empresa');
