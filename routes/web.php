@@ -49,4 +49,15 @@ Route::get('/', function () {
 //     return redirect()->route('noticias');
 // });
 
-
+// Agrupamento com prefixo
+Route::prefix('admin')->group(function(){
+    Route::get('dashboard',function(){
+       return 'dashboard' ;
+    })->;
+    Route::get('users',function(){
+        return 'users' ;
+     });
+     Route::get('clientes',function(){
+        return 'clientes' ;
+     });
+});
