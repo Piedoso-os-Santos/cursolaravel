@@ -38,3 +38,13 @@ Route::get('/produto/{id}/{categoria}',function($id,$categoria){
 // Direcioanmentos
 // Route::redirect('/sobre', '/empresa');
 Route::view('/empresa','site/empresa');
+
+
+Route::get('/news',function(){
+    return view('news');
+})->name('noticias');
+
+
+Route::get('/novidades',function(){
+    return redirect()->route('noticias');
+});
