@@ -29,3 +29,8 @@ Route::any('/any',function(){
 Route::match(['get','post'],'/match',function(){
     return 'Permite apenas acessos definidos';
 });
+
+// Adicionando variaveis a url
+Route::get('/produto/{id}/{categoria}',function($id,$categoria){
+    return 'O id do produto eh '.$id.' Categoria: '.$categoria; 
+});
