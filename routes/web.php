@@ -77,21 +77,21 @@ Route::get('/', function () {
 
 // Agrupamento por prefixos e nomes
 
-Route::group([
-    'prefix' => 'admin',
-    'as' => 'admin.'
-],function(){
+// Route::group([
+//     'prefix' => 'admin',
+//     'as' => 'admin.'
+// ],function(){
 
-    Route::name('dashboar')->group(function(){
-    Route::get('dashboard',function(){
-       return 'dashboard' ;
-    })->name('dashborard');
-    Route::get('users',function(){
-        return 'users' ;
-     })->name('users');
-     Route::get('clientes',function(){
-        return 'clientes' ;
-     })->name('clientes');
-    });
-});
+//     Route::name('dashboar')->group(function(){
+//     Route::get('dashboard',function(){
+//        return 'dashboard' ;
+//     })->name('dashborard');
+//     Route::get('users',function(){
+//         return 'users' ;
+//      })->name('users');
+//      Route::get('clientes',function(){
+//         return 'clientes' ;
+//      })->name('clientes');
+//     });
+// });
 
