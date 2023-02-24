@@ -63,14 +63,35 @@ Route::get('/', function () {
 // });
 
 // Agrupamento por nomee
-Route::name('admin')->group(function(){
-    Route::get('admin/dashboard',function(){
+// Route::name('admin')->group(function(){
+//     Route::get('admin/dashboard',function(){
+//        return 'dashboard' ;
+//     })->name('dashborard');
+//     Route::get('admin/users',function(){
+//         return 'users' ;
+//      })->name('users');
+//      Route::get('admin/clientes',function(){
+//         return 'clientes' ;
+//      })->name('admin/clientes');
+// });
+
+// Agrupamento por prefixos e nomes
+
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.'
+],function(){
+
+    Route::name('dashboar')->group(function(){
+    Route::get('dashboard',function(){
        return 'dashboard' ;
     })->name('dashborard');
-    Route::get('admin/users',function(){
+    Route::get('users',function(){
         return 'users' ;
      })->name('users');
-     Route::get('admin/clientes',function(){
+     Route::get('clientes',function(){
         return 'clientes' ;
-     })->name('admin/clientes');
+     })->name('clientes');
+    });
 });
+
