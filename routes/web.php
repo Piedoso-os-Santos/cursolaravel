@@ -13,8 +13,18 @@ use App\Http\Controllers\ProdutoController;
 |
 */
 
-Route::get('/', [ProdutoController::class,'index']);
+// Controllers resource
+Route::resource('produtos',ProdutoController::class);
 
+
+
+
+
+
+Route::get('/', [ProdutoController::class,'index'])->name('produto.inex');
+
+// Route::get('/produto/{id}',[ProdutoController::class,'show'])->name('produto.show');
+ 
 // Route::get('/empresa',function(){
 //     return view('site/empresa');
 // });
