@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use App\Models\Categoria;
 
 class SiteController extends Controller
 {
@@ -23,5 +24,11 @@ class SiteController extends Controller
         $produto = Produto::where('slug',$slug)->first();
 
         return view('site.details',compact('produto'));
+    }
+    public function categoria($id){
+        $categoria = Categoria::find($id);
+        $produtos = Produto::where('id_categoria',$id)->get();
+
+        return view('site.categoria',compact('produtos','categoria'));
     }
 }
