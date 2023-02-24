@@ -50,14 +50,27 @@ Route::get('/', function () {
 // });
 
 // Agrupamento com prefixo
-Route::prefix('admin')->group(function(){
-    Route::get('dashboard',function(){
+// Route::prefix('admin')->group(function(){
+//     Route::get('dashboard',function(){
+//        return 'dashboard' ;
+//     })->;
+//     Route::get('users',function(){
+//         return 'users' ;
+//      });
+//      Route::get('clientes',function(){
+//         return 'clientes' ;
+//      });
+// });
+
+// Agrupamento por nomee
+Route::name('admin')->group(function(){
+    Route::get('admin/dashboard',function(){
        return 'dashboard' ;
-    })->;
-    Route::get('users',function(){
+    })->name('dashborard');
+    Route::get('admin/users',function(){
         return 'users' ;
-     });
-     Route::get('clientes',function(){
+     })->name('users');
+     Route::get('admin/clientes',function(){
         return 'clientes' ;
-     });
+     })->name('admin/clientes');
 });
